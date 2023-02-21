@@ -153,4 +153,32 @@ def create_spend_chart(categories):
 
 
 
+#TESTING 
+food = Category('Food')
+print('Food category was created')
+food.deposit(1000, "initial deposit")
+print('1000 was deposited on food category')
+food.withdraw(10.15, "groceries")
+print('10.15 was withdrawed for "groceries"')
+food.withdraw(15.89, "restaurant and more food for dessert")
+print('15.89 was withdrawed for "restaurant and more food for dessert" ')
+print('\n your balance is: \n')
+print(food.get_balance())
 
+print('\n This is your receipt: \n')
+print(food)
+
+clothing = Category("Clothing")
+food.transfer(50, "Clothing")
+clothing.withdraw(25.55)
+clothing.withdraw(100)
+auto = Category("Auto")
+auto.deposit(1000, "initial deposit")
+auto.withdraw(15)
+
+print('\n This are your other expenses \n')
+print(food)
+print(clothing)
+
+print('\n')
+print(create_spend_chart([food,clothing,auto]))
